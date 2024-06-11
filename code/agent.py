@@ -68,7 +68,7 @@ def Stream_agent(prompt):
         response_text=response_text.choices[0].message.content
         print(response_text)
         print("\n")
-        time.sleep(20)
+        #time.sleep(1)
         action,action_input=extract_action_and_input(response_text)
         #print(action,action_input)
         if action[-1]=="Maps":
@@ -80,6 +80,7 @@ def Stream_agent(prompt):
 
         elif action[-1]=="Response To Human":
             print(f"Response: {action_input[-1]}")
+            out_put=action_input[-1]
             #sys.exit()
             break
         
@@ -87,17 +88,17 @@ def Stream_agent(prompt):
         print("Observation: ", observation)
         messages.extend([{"role":"system","content":response_text},
                          {"role":"user","content":f"Observation: {observation}"},])
-
+    return out_put
     
 
-
-Stream_agent("I live in Sydney. Assuming the live travel time between Gordon and Wynyard right now is x, calculate 5 times x minus 10")
-# Stream_agent("I live in Gordon, Sydney. I have a decision to make and I need your help.\
-#  I can buy an iphone either from Chatswood,Penrith or Schofields. \
-#  My objective is to minimize the total cost involved. \
-#  The cost incurred to travel to a location is x*5 dollar where x is the travel time to the place in minutes. \
-#  Cost of iphone in chatswood is $1230,cost of iphone in schofields is $1120 and cost of iphone in penirth is $1090.\
-#   And I can only walk to schofields. Where should I buy the iphone?")
+if __name__=="__main__":
+    Stream_agent("I live in Sydney. Assuming the live travel time between Gordon and Wynyard right now is x, calculate 5 times x minus 10")
+    # Stream_agent("I live in Gordon, Sydney. I have a decision to make and I need your help.\
+    #  I can buy an iphone either from Chatswood,Penrith or Schofields. \
+    #  My objective is to minimize the total cost involved. \
+    #  The cost incurred to travel to a location is x*5 dollar where x is the travel time to the place in minutes. \
+    #  Cost of iphone in chatswood is $1230,cost of iphone in schofields is $1120 and cost of iphone in penirth is $1090.\
+    #   And I can only walk to schofields. Where should I buy the iphone?")
 
 
 
