@@ -13,7 +13,7 @@ async def root():
         "<body style='padding: 10px;'>"
         "<h1>Welcome to the LLM maps&calculator API</h1>"
         "<div>"
-        "Check the docs: <a href='/process_text'>here</a>"
+        "Check the docs: <a href='/docs'>here</a>"
         "</div>"
         "</body>"
         "</html>"
