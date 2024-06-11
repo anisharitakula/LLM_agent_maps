@@ -8,6 +8,7 @@ import re,time,os
 import sys
 from util.sys_prompt import system_prompt
 from openai import OpenAI
+import uvicorn
 
 
 client = OpenAI()
@@ -92,7 +93,8 @@ def Stream_agent(prompt):
     
 
 if __name__=="__main__":
-    Stream_agent("I live in Sydney. Assuming the live travel time between Gordon and Wynyard right now is x, calculate 5 times x minus 10")
+    uvicorn.run(app, host="localhost", port=8001, log_level="debug")
+    #Stream_agent("I live in Sydney. Assuming the live travel time between Gordon and Wynyard right now is x, calculate 5 times x minus 10")
     # Stream_agent("I live in Gordon, Sydney. I have a decision to make and I need your help.\
     #  I can buy an iphone either from Chatswood,Penrith or Schofields. \
     #  My objective is to minimize the total cost involved. \
