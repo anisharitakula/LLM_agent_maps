@@ -4,6 +4,10 @@ import uvicorn
 
 app=FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the LLM maps agent"}
+
 @app.post("/process_text")
 async def process_text(input_text):
     # Replace this with your actual processing logic
