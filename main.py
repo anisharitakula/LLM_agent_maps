@@ -40,4 +40,4 @@ async def query_text(input_text):
     return processed_text
 
 if __name__ == "__main__":
-    uvicorn.run(app,host="0.0.0.0",port=5000)
+    uvicorn.run(app,host="0.0.0.0",port=PORT)
