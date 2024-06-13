@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from code.agent import Stream_agent
 from fastapi.responses import HTMLResponse
 import uvicorn
