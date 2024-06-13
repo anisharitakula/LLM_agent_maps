@@ -2,8 +2,20 @@ from fastapi import FastAPI
 from code.agent import Stream_agent
 from fastapi.responses import HTMLResponse
 import uvicorn
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app=FastAPI()
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    logger.info(f"Request: {request.method} {request.url}")
+    response = await call_next(request)
+    logger.info(f"Response status code: {response.status_code}")
+    return response
 
 @app.get("/")
 async def root():
