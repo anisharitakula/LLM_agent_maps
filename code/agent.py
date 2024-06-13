@@ -91,6 +91,7 @@ def Stream_agent(prompt):
     
 
 if __name__=="__main__":
+    pass
     #Stream_agent("I live in Sydney. Assuming the live travel time between Gordon and Wynyard right now is x, calculate 5 times x minus 10")
     # Stream_agent("I live in Gordon, Sydney. I have a decision to make and I need your help.\
     #  I can buy an iphone either from Chatswood,Penrith or Schofields. \
@@ -98,6 +99,3 @@ if __name__=="__main__":
     #  The cost incurred to travel to a location is x*5 dollar where x is the travel time to the place in minutes. \
     #  Cost of iphone in chatswood is $1230,cost of iphone in schofields is $1120 and cost of iphone in penirth is $1090.\
     #   And I can only walk to schofields. Where should I buy the iphone?")
-
-
-
